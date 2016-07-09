@@ -30,7 +30,7 @@
   },
   "scripts": {
     "test": "npm run eslint && npm run ava",
-    "eslint": "eslint index.js lib/*.js",
-    "ava": "ava test/spec.js"
+    "eslint": "eslint index.js",
+    "ava": "ava spec.js"
   }
 }

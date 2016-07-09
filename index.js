@@ -23,13 +23,13 @@ module.exports = function(opts) {
         root = process.cwd(),
         configFile = path.join(root, opts || defaultConfigFileName)
       opts = require(configFile)
-    } catch {
+    } catch(e) {
       opts = require(path.join(__dirname, defaultConfigFileName))
     }
   }
 
   const r = {}, b = Object.assign({}, bDefaults)
-  for (key in opts) {
+  for (const key in opts) {
     if (~bOptsKeys.indexOf(key))
       b[key] = opts[key]
     else
@@ -39,8 +39,8 @@ module.exports = function(opts) {
   return co.wrap(function* (from, to){
     r.entry = from
     b.dest = to
-    const bundle = await rollup(r)
-    await bundle.write(b)
+    const bundle = yield rollup(r)
+    yield bundle.write(b)
 
     // TODO: return dependencies
   })
