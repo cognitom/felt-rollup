@@ -8,5 +8,6 @@ module.exports = {
     resolve({ jsnext: true,  main: true, browser: true }),
     commonjs(),
     buble()
-  ]
+  ],
+  sourceMap: true
 }
