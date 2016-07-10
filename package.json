@@ -1,8 +1,7 @@
 {
   "name": "felt-rollup",
   "version": "0.0.1",
-  "description": "",
-  "private": true,
+  "description": "Rollup plugin for Felt",
   "main": "index.js",
   "homepage": "https://github.com/cognitom/felt-rollup",
   "repository": {
