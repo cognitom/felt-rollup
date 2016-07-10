@@ -28,15 +28,15 @@ module.exports = function(opts) {
     }
   }
 
-  const r = {}, b = Object.assign({}, bDefaults)
-  for (const key in opts) {
-    if (~bOptsKeys.indexOf(key))
-      b[key] = opts[key]
-    else
-      r[key] = opts[key]
-  }
-
   return co.wrap(function* (from, to){
+    const r = {}, b = Object.assign({}, bDefaults)
+    for (const key in opts) {
+      if (~bOptsKeys.indexOf(key))
+        b[key] = opts[key]
+      else
+        r[key] = opts[key]
+    }
+    
     r.entry = from
     b.dest = to
     const bundle = yield rollup(r)
