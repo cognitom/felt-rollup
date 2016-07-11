@@ -24,7 +24,7 @@ module.exports = function(opts) {
         configFile = path.join(root, opts || defaultConfigFileName)
       opts = require(configFile)
     } catch(e) {
-      opts = require(path.join(__dirname, defaultConfigFileName))
+      throw new Error('No config file for felt-postcss')
     }
   }
 
@@ -36,12 +36,10 @@ module.exports = function(opts) {
       else
         r[key] = opts[key]
     }
-    
+
     r.entry = from
     b.dest = to
     const bundle = yield rollup(r)
     yield bundle.write(b)
-
-    // TODO: return dependencies
   })
 }

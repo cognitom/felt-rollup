@@ -14,14 +14,24 @@ $ npm install felt-postcss
 const
   express = require('express'),
   felt = require('felt'),
-  rollup = require('felt-rollup')
+  rollup = require('felt-rollup'),
+  buble = require('rollup-plugin-buble'),
+  resolve = require('rollup-plugin-node-resolve'),
+  commonjs = require('rollup-plugin-commonjs')
 
 const app = express()
 
 app.use(felt({
   src: 'public'
-  compilers: {
-    '**/*.js': rollup('rollup.config.js')
+  handlers: {
+    '.js': rollup({
+      plugins: [
+        resolve({ jsnext: true,  main: true, browser: true }),
+        commonjs(),
+        buble()
+      ],
+      sourceMap: true
+    })
   }
 }))
 app.use(express.static('public'))
