@@ -24,7 +24,7 @@ module.exports = function(opts) {
         configFile = path.join(root, opts || defaultConfigFileName)
       opts = require(configFile)
     } catch(e) {
-      throw new Error('No config file for felt-postcss')
+      throw new Error('No config file for felt-rollup')
     }
   }
 
