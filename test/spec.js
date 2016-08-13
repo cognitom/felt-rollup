@@ -25,7 +25,7 @@ describe('felt-rollup', () => {
       file = path.join(__dirname, 'expect', 'app.js'),
       expected = yield fsp.readFile(file, 'utf8')
 
-    assert.equal(actual, expected.trim())
+    assert.equal(actual, expected)
   }))
 
   after(() => {
