@@ -1,5 +1,7 @@
 # felt-rollup
 
+[![Build Status][travis-image]][travis-url]
+
 Rollup plugin for Felt.
 
 ## Installation
@@ -37,3 +39,6 @@ app.use(felt({
 app.use(express.static('public'))
 app.listen(3000)
 ```
+
+[travis-image]:https://img.shields.io/travis/cognitom/felt-rollup.svg?style=flat-square
+[travis-url]:https://travis-ci.org/cognitom/felt-rollup
