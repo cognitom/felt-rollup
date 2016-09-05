@@ -1,9 +1,9 @@
 (function () {
-	'use strict';
+'use strict';
 
-	const message = 'Hello world!'
+const message = 'Hello world!'
 
-	console.log(message)
+console.log(message)
 
 }());
 //# sourceMappingURL=app.js.map
