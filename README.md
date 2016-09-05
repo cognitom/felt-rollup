@@ -2,12 +2,12 @@
 
 [![Build Status][travis-image]][travis-url]
 
-Rollup plugin for Felt.
+[Rollup](https://github.com/rollup/rollup) plugin for [Felt](https://github.com/cognitom/felt).
 
 ## Installation
 
 ```bash
-$ npm install felt-postcss
+$ npm install felt-rollup
 ```
 
 ## Usage
